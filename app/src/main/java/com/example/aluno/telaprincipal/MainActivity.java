@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +27,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,TimeActivity.class));
             }
+        });
+
+    }
+
+    public void addListenerOnButton() {
+
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton1);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Toast.makeText(MainActivity.this,
+                        "ImageButton is clicked!", Toast.LENGTH_SHORT).show();
+
+            }
+
         });
 
     }
